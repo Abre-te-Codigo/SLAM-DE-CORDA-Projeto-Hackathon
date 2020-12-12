@@ -1,0 +1,416 @@
+body {
+    background-image: url('img/fundo_cidade_preto_fundocordel.png');
+    background-color: #000000;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 100%;
+    margin: 0;
+}
+
+#logo {
+    position: fixed;
+    top: 0px;
+    left: 5%;
+    width: 45%;
+    /* height: 500px; */
+}
+
+#info {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 40px;
+}
+
+#about {
+    text-align: center;
+}
+#about a {
+    color: #44F;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main {
+    background-image: url('img/fundo_cordel_med.png');
+    /* background-repeat: repeat-x; */
+    background-size: cover;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 95%;
+    height: 92.5%;
+    margin: 2.5%;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #000000;
+    z-index: 1;
+}
+
+#busca {
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+    background-color: #000;
+    color: #FFF;
+    border-radius: 25px;
+    text-align: right;
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
+    width: 600px;
+    height: 50px;
+    /* transform: translate(50%, 100%); */
+    z-index: 0;
+}
+
+#buscaMenu {
+    background-color: #000;
+    color: #FFF;
+    position: absolute;
+    bottom: 150px;
+    right: 50px;
+    width: 750px;
+    /* transform: translate(50%, 0); */
+    z-index: 0;
+    font-size: 14pt;
+}
+
+#buscaMenu a{
+    color: #FFF;
+}
+
+#buscaMenu b{
+    color: #FF6;
+}
+
+#menu {
+    background-image: url('img/fundo_menu.png');
+    /* background-color: #FFFFFFAA; */
+    /* opacity: 50%; */
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    padding: 25px;
+    width: 300px;
+    height: 500px;
+    /* transform: translate(-50%, 0%); */
+    text-align: center;
+    font-family: fantasy;
+    font-size: 24pt;
+    /* font-weight: ; */
+}
+
+#home-link{
+    position: relative;
+    top: 0;
+    right: 0;
+    text-align: right;
+}
+
+#text_container {
+    background-color: #FFF7;
+    position: relative;
+    /* padding-left: 5%; */
+    top: 0;
+    left: 30px;
+    width: 45%;
+    height: 90%;
+    font-size: 18pt;
+    overflow-y: auto;
+    display: inline-block;
+}
+
+.option a{
+    text-decoration: none;
+    color: #000;
+    margin: 0;
+}
+
+.option{
+    height: 33%;
+    width: 100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.content {
+    position: absolute;
+    display: inline-block;
+    overflow-wrap: normal;
+    top: 30px;
+    right: 30px;
+    width: 40%;
+    font-size: 16pt;
+}
+
+.bigbox {
+    display: inline-block;
+    float: right;
+    width: 40%;
+    height: 80%;
+    text-align: center;
+}
+
+#escrever {
+    position: relative;
+    display: inline-block;
+    top: 0;
+    width: 50%;
+    left: 30px;
+    font-size: 16pt;
+}
+
+.subcontent {
+    position: absolute;
+    display: inline-block;
+    overflow-wrap: normal;
+    bottom: 30px;
+    right: 30px;
+    width: 40%;
+    max-height: 60%;
+    font-size: 16pt;
+    overflow-y: auto;
+}
+
+.consultaLink {
+    background-color: #000;
+    border-radius: 25px;
+    position: absolute;
+    bottom:100px;
+    left:50px;
+    /* transform: translate(0, 50%); */
+}
+.consultaLink a{
+    color: #FFF;
+    text-decoration: bold;
+    transform: translate(0, 50%);
+    font-family: fantasy;
+}
+
+.left {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    padding: 10px;
+    width: 50px;slam_de_corda_logo
+    align-self: start;
+}
+.right {
+    grid-row-start: 1;
+    grid-column-start: 3;
+    grid-column-end: 3;
+    padding: 10px;
+    width: 50px;
+    align-self: start;
+    justify-self: end;
+}
+#criaInfoCordel {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12pt;
+    text-align: right;
+    /* justify-self: center; */
+    /* align-self: baseline; */
+}
+
+.consultaCat {
+    display: grid;
+    position: relative;
+    bottom: 30px;
+    left:30px;
+    width: 50%;
+    /* transform: translate(0, 50%); */
+}
+.consultaCat a{
+    color: #000;
+    text-decoration: bold;
+    /* transform: translate(0, 50%); */
+}
+
+#linkInspira {
+    position: absolute;
+    display: flex;
+    bottom: 30px;
+    right: 30px;
+    font-size: 20pt;
+}
+#linkInspira a {
+    color: #000;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Audio controls grid */
+/* -------------------------------------------------------------------------- */
+
+.grava {
+    background-color: #444;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    place-self: center stretch;
+    font-family: fantasy;
+    font-size: 16pt;
+    padding: 5px;
+}
+.recbut {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    padding: 10px;
+    place-self: center;
+}
+.track {
+    grid-row-start: 2;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    padding: 10px;
+    place-self: center;
+}
+/* .buttons2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    place-self: center;
+    height: 25px;
+} */
+#recControls {
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    place-self: center stretch;
+    margin-bottom: 10px;
+}
+#recordingsList{
+    grid-row-start: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    place-self: center stretch;
+    display: grid;
+}
+
+#audio {
+    display: grid;
+    background-color: #000;
+    color: #FFF;
+    text-align: center;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    /* width: 30%; */
+}
+
+/* -------------------------------------------------------------------------- */
+/* Database query controls */
+/* -------------------------------------------------------------------------- */
+
+#page {
+    width: 50px;
+}
+.pages {
+    dislay: inline-block;
+}
+.cordel {
+    padding-top: 25px;
+}
+
+#catalogue {
+    width: 100%;
+    font-size: 16pt;
+}
+
+
+
+
+textarea {
+    resize: none;
+    overflow: auto;
+}
+
+.btn {
+  height: 50px;
+  width: 50px;
+  border-color: #000;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+}
+
+.buttons {
+    /* float: right; */
+    text-align: left;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: translate(0, -27.5px);
+}
+
+
+
+/* Imported from the recorder */
+/* https://github.com/addpipe/simple-recorderjs-demo/blob/master/style.css */
+
+button {
+  /* flex-grow: 1; */
+  height: 60px;
+  width: 60px;
+  border: none;
+  border-radius: 30px;
+  background: #ed341d;
+  margin-left: 2px;
+  box-shadow: inset 0 -0.15rem 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  color:#ffffff;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+button:hover, button:focus {
+  outline: none;
+  background: #c72d1c;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+button:active {
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
+  line-height: 3rem;
+}
+
+button:disabled {
+  pointer-events: none;
+  background: lightgray;
+}
+button:first-child {
+  margin-left: 0;
+}
+
+audio {
+  display: flex;
+  width: 300px;
+  padding-left: 10px;
+  margin-top: 5px;
+  /* margin-top: 0.2rem; */
+}
+
+li {
+  list-style: none;
+  /* margin-bottom: 1rem; */
+  white-space: nowrap;
+}
+/* #formats {
+  margin-top: 0.5rem;
+  font-size: 80%;
+} */

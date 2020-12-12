@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title>Slam de Corda</title>
+</head>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
+<!-- <script src="data_explore.js"></script> -->
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script src="cordeis.json"></script>
+
+<body>
+
+<div id="logo">
+  <img src="img/slam_de_corda_logo.png" style="width:100%;"/>
+</div>
+
+<div id="info">
+  <a href="#" onclick="document.getElementById('about').style.visibility = 'visible';">
+    <img src="img/info_round.png" style="width:100%; float:right;"/>
+  </a>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="main" style="visibility: hidden; font-size: 20px;">
+  <div id="home-link">
+    <a href="#" onclick="document.getElementById('about').style.visibility = 'hidden';">
+      <img src="img/home.png" width=30px;/>
+    </a>
+  </div>
+	<br/>
+	<br/>
+	<b><a href="https://github.com/cheque/slam-de-corda" target="_blank">GitHub</a></b>
+	<br/>
+	<h3>Equipe Sésamo:</h3>
+	<b>
+		<a href="https://chequesoto.info" target="_blank">Cheque</a> /
+		<a href="https://www.behance.net/luizagiannelli" target="_blank">Luiza</a> /
+		<a href="https://mattopicch7.wixsite.com/website" target="_blank">Matto</a> /
+		<a href="https://www.linkedin.com/in/palomara/" target="_blank">Paloma</a> /
+		<a href="https://www.linkedin.com/in/thiago-paes-wang-8727a01b6/" target="_blank">Thiago</a><br/>
+	</b>
+	<br/>
+	<hr/>
+  <img src="img/slam_de_corda_logo.png" height=250px >
+	<hr/>
+  <br/>
+  <div style="display: inline-block; width: 30%;">
+    Uma produção de: <br/>
+    <img src="img/logo_sesamo1cores_fundo_branco.png" height=100px>
+  </div>
+  <div style="display: inline-block; width: 30%;">
+    Uma coleção de cordéis do: <br/>
+    <a href="http://www.ieb.usp.br/" target="_blank">
+      <img src="img/IEBsite122.png" height=100px>
+    </a>
+  </div>
+  <div style="display: inline-block; width: 30%;">
+    Para o hackaton:<br/>
+    <a href="https://www.goethe.de/prj/hyc/pt/bra.html" target="_blank">
+      <img src="img/abrete_codigo.png" height=100px>
+    </a>
+  </div>
+  <br/>
+</div>
+
+<!-- CONSULTA AO CATÁLOGO -->
+<div id="consulta" class="main" style="visibility: hidden;">
+  <div id="home-link">
+    <a href="#" onclick="selector(0);"><img src="img/home.png" width=30px;/></a>
+  </div>
+
+  <div id="text_container">
+  </div>
+
+  <div id="content1" class="content">
+    <div class="cordel">
+      <select id="catalogue" onchange="mainID=this.value; selectDisplay();"></select>
+    </div><br>
+    <div id="pages" class="pages">
+    <input type="checkbox" id="image" name="image" onchange="selectDisplay();" style="transform: scale(1.2);"/>
+      Ver o cordel &nbsp;&nbsp;
+		<!-- <input id="page" type="number" value=1 step=1 min=1 oninput="showPage(this.value);" onchange="showPage(this.value);" onkeydown="return false;"
+			style="visibility: hidden;"/> -->
+      <!-- / -->
+		(<div id="totpag" style="display: inline;"></div> páginas)
+    </div>
+    <h3>Título</h3>
+    <div id="titulo" class="consultas"></div>
+    <h3>Autor</h3>
+    <div id="autor" class="consultas"></div>
+    <h3>Localidade</h3>
+    <div id="localidade" class="consultas"></div>
+    <h3>Data</h3>
+    <div id="data" class="consultas"></div>
+  </div>
+
+  <div id="linkInspira">
+    <a href="#" onclick="selector(2); inspira(mainID);">
+      <img src="img/slam_xilo.png" width="120px" style="float: right; padding-left: 20px;">
+      Inspirou-se? <br/> Bora fazer <br/> rimas?
+    </a>
+  </div>
+
+</div>
+
+<!-- CRIAÇÃO DE SLAMS -->
+<div id="cria" class="main" style="visibility: hidden;">
+  <div id="home-link">
+    <a href="#" onclick="selector(0);"><img src="img/home.png" width=30px;/></a>
+  </div>
+  <div id="escrever">
+    <form>
+      <textarea id="areatexto" placeholder="Escreve tua própria rima"
+			onchange = "updateTextFile();" oninput = "updateTextFile();"
+      rows="25" cols="50" style="font-size: 16pt;"></textarea>
+    </form>
+    <div class="buttons">
+      <a id="downloadText" onclik="downloadTextFile();">
+        <img src="img/download_round.png" height=50px />
+      </a>
+      <!-- <a href="#" onclik="share_text();">
+        <img src="img/share_round.png" height=50px />
+      </a> -->
+      <a href="javascript:clearText();">
+        <img src="img/trash_round.png" height=50px />
+      </a>
+    </div>
+  </div>
+
+  <div id="content2" class="subcontent">
+  </div>
+
+  <div id="audio">
+    <div class="grava">
+      Grave sua rima!
+    </div>
+    <div class="recbut">
+      <img src="img/slam_xilo.png" height=80px />
+    </div>
+    <div class="track">
+      Acordeón Pirata Instrumental<br>Hip Hop Trap Rap (Free Use)
+      <br>
+      <audio controls id="beat">
+        <source src="beat.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+    </div>
+		<div id="recControls">
+			<div style="display: inline-block; padding: 10px; font-family: fantasy;">
+				<input type="checkbox" id="syncAudio" name="image" onchange="" style="transform: scale(1.2);"/>
+				<br/>Sync
+			</div>
+			<button id="recordButton"><img src="img/mic.png" height=40px/></button>
+    	<button id="pauseButton" disabled><img src="img/pause.png" height=40px/></button>
+    	<button id="stopButton" disabled><img src="img/stop.png" height=40px/></button>
+		</div>
+		<div id="recordingsList"></div>
+  </div>
+
+  <div class="consultaCat">
+    <div class="left">
+      <a href="#" onclick="inspira(Math.floor(Math.random() * Cordeis.length));">
+        <img src="img/refresh_round.png" height=50px style="float: left;"/>
+      </a>
+    </div>
+    <div id="criaInfoCordel">
+    </div>
+    <div class="right">
+      <a href="#" onclick="selector(1); selectDisplay();">
+        <img src="img/docs_round.png" height=50px style="float: right;"/>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- BARRA DE BUSCA E RESULTADOS -->
+<div id="busca" style="visibility: visible;">
+    <form>
+        <textarea id="search-term" name="areatexto" placeholder="Busca inspiração nos cordéis"
+        onchange="buscaCordel(this.value)" oninput="buscaCordel(this.value)"
+        rows="1" cols="30" style="font-size: 20pt; flex: 1;"></textarea>
+        <!-- <a href="#" onclick="selector(2); return false;"> -->
+        <!-- </a> -->
+        <!-- <br> -->
+    </form>
+    <img src="img/search.png" width=40px style="float: right; padding-left:20px;">
+</div>
+
+<div id="buscaMenu">
+</div>
+
+
+<div class="consultaLink">
+  <a href="#" onclick="selector(1); selectDisplay();">
+    <img src="img/docs_round.png" height=50px style="float: left;"/>
+    <div style="display: flex; padding-left: 20px;">Consulta o acervo</div>
+  </a>
+</div>
+
+
+</body>
+
+<script src="main.js"></script>
+<!-- <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script> -->
+<script src="recorder.js"></script>
+<script src="rec.js"></script>
+
+</html>
