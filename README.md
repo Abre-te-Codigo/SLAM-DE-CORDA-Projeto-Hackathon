@@ -6,5 +6,5 @@ A relação do ser humano com a linguagem resulta em inúmeras manifestações q
 - [https://github.com/cheque/slam-de-corda.git](https://github.com/cheque/slam-de-corda.git)
 
 ## Vídeos 
-- [https://youtu.be/VCPmH3Zr4R4](https://youtu.be/VCPmH3Zr4R4)
-- [https://www.youtube.com/watch?v=dxXAOHyZDGI](https://www.youtube.com/watch?v=dxXAOHyZDGI)
+- Pitch [https://www.youtube.com/watch?v=dxXAOHyZDGI](https://www.youtube.com/watch?v=dxXAOHyZDGI)
+- Demo [https://youtu.be/VCPmH3Zr4R4](https://youtu.be/VCPmH3Zr4R4)
